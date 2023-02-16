@@ -1,0 +1,38 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+import java.util.Scanner;
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	     Scanner kb = new Scanner(System.in) ;
+	     int t = kb.nextInt();
+		while(t-- !=0)
+		{
+		    int a =kb.nextInt();
+		    int petrol = kb.nextInt();
+		    int diesel = kb.nextInt();
+		    int x = kb.nextInt();
+		    int y = kb.nextInt();
+		    float h = (a*petrol) / x ;
+		    float p = (a*diesel) / y ;
+		   if( h>p)
+		   {
+		       System.out.println("DIESEL");
+		   }
+		   else if( p>h ){
+		       System.out.println("PETROL");
+		   }
+		   
+		   else {
+		       System.out.println("ANY") ;
+		   } 
+		   
+		}
+		
+	
+	    
+	}
+}
