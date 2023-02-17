@@ -1,0 +1,17 @@
+class Solution {
+    static long solve(int n, int k, ArrayList<Long> arr) {
+        //code here
+        
+        for(int i=k; i<n; i++)
+        {
+            long sum = 0 ;
+            for(int j=i-k; j<i; j++)
+            {
+                sum+=arr.get(j);
+            }
+             arr.add(sum);
+        }
+        return arr.get(n-1);
+    
+    }
+}
