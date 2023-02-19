@@ -1,0 +1,28 @@
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+	 Scanner kb = new Scanner(System.in) ;
+	  int t = kb.nextInt() ;
+	  while(t--!=0)
+	  {
+	      int s = kb.nextInt();
+	      int x = kb.nextInt();
+	      int y = kb.nextInt();
+	      int z = kb.nextInt();
+	      
+	    
+	      if(x+y+z<=s) 
+	        System.out.println("0");
+		  else if(x+z<=s || y+z<=s)
+		    System.out.println("1");
+		  else
+		  System.out.println("2");
+	  }
+	 
+	 
+	 
+	}
+}
+
+
