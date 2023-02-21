@@ -1,0 +1,21 @@
+class Solution {
+    public int singleNonDuplicate(int[] nums) {
+     int pair = 1;
+     for(int i=1; i<nums.length; i++)
+     {
+         if(nums[i] == nums[i-1]){
+             pair++ ;
+         }
+         if(pair==1)
+         {
+             return nums[i-1] ;
+         }
+         if(pair>=2 && nums[i] != nums[i-1])
+         {
+             pair = 1 ;
+         }
+     
+     }
+       return nums[nums.length - 1] ; 
+    }
+}
