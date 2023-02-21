@@ -1,0 +1,53 @@
+class Solution
+{
+    static class Pair{
+        int r;
+        int c;
+        public Pair(int r,int c){
+            this.r = r;
+            this.c = c;
+        }
+    }
+	public static int minIteration(int N, int M, int x, int y){
+		//code here
+		
+		int matrix[][] = new int[N][M];
+		matrix[x-1][y-1] = 1;
+		int dRow[] = {-1,0,1,0};
+		int dCol[] = {0,1,0,-1};
+		
+		//apply bfs
+		int count  = 0;
+		Queue<Pair> queue = new LinkedList<>();
+		//first add the indidices from where we will start our bfs
+		queue.add(new Pair(x-1,y-1));
+		
+		while(!queue.isEmpty()){
+		    int size = queue.size();
+		    for(int j=0; j<size; j++){
+		        int row = queue.peek().r;
+		        int col = queue.peek().c;
+		        queue.poll();
+		        //move to all four directions
+		        for(int i=0; i<4; i++){
+		            int nRow = row + dRow[i];
+		            int nCol = col + dCol[i];
+		            
+		            //check valid or not
+		            if(nRow>=0 && nRow<N && nCol>=0 && nCol<M && matrix[nRow][nCol] == 0){
+		                matrix[nRow][nCol] = 1;
+		                queue.add(new Pair(nRow,nCol));
+		            }
+		        }
+		        
+		    }
+		    if(!queue.isEmpty()){
+		        count++;
+		    }
+		    
+		}
+		
+		return count;
+		
+	}
+}
