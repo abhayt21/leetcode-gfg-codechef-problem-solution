@@ -1,0 +1,53 @@
+class Solution {
+
+    static int checkCompressed(String S, String T) {
+
+        int i=0, j=0;
+
+        int N = S.length(), M  = T.length();
+
+        // if(S.charAt(0) != T.charAt(0) && T.charAt(0) >= '0' && T.charAt(0) <='9') return 0;
+
+        while(i<N && j < M){
+
+            int moves =0;
+
+            String str = "";
+
+            while(j < M && T.charAt(j) >='0' && T.charAt(j) <='9') {
+
+                str+= T.charAt(j);
+
+                moves = moves*10 + (T.charAt(j) - '0');
+
+                j++;
+
+            }
+
+            
+
+            // if(str.length()>0) moves = Integer.parseInt(str);
+
+            i+= moves;
+
+            // System.out.println("i and j index is "+ S.charAt(i) + " " + T.charAt(j));
+
+            if(i==N && j == M) return 1;
+
+            if(i>= S.length() || j>=T.length()) return 0;
+
+            if(S.charAt(i) != T.charAt(j)) return 0;
+
+            i++;
+
+            j++;
+
+            
+
+        }
+
+        return 1;
+
+    }
+
+}
