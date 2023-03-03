@@ -1,0 +1,17 @@
+class Solution {
+    public int strStr(String haystack, String needle) {
+       for(int ptr1 =0 ; ptr1<=haystack.length() - needle.length(); ptr1++){
+           int ptr2 = 0 ;
+           while(ptr2 < needle.length() && haystack.charAt(ptr1+ptr2) == needle.charAt(ptr2)){
+               ptr2++ ;
+           }
+           if(ptr2 == needle.length()){
+            
+               return ptr1;
+           }
+
+       }
+        return -1 ;
+
+    }
+}
