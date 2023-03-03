@@ -1,0 +1,19 @@
+class Solution{
+
+public:
+
+    vector<long long int> minimumSquares(long long int L, long long int B)
+
+    {
+
+        vector<long long int> v;
+
+        long long int x= __gcd(L,B);
+
+        v={(B/x)*(L/x),x};
+
+          return v;
+
+    }
+
+};
