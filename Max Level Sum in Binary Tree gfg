@@ -1,0 +1,34 @@
+class Solution {
+    
+public int maxLevelSum(Node root) {
+        Queue<Node> que = new LinkedList<>();
+        que.add(root);
+        int maxi = root.data;
+
+        while(!que.isEmpty()){
+            
+            int n = que.size();
+            int sum=0;
+            
+            for(int i=0; i<n; i++){
+                Node top = que.poll();
+                
+                if(top.left != null){
+                    que.add(top.left);
+                    sum += top.left.data;
+                }
+                
+                if(top.right != null){
+                    que.add(top.right);
+                    sum += top.right.data;
+                }
+            }
+            
+            if (!que.isEmpty())
+            maxi = Math.max(maxi,sum);
+        }
+        
+        return maxi;
+    }
+    
+}
