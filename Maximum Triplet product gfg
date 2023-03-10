@@ -1,0 +1,23 @@
+class Solution {
+    Long maxTripletProduct(Long arr[], int n)
+    {
+        // Complete the function
+     PriorityQueue<Long> max_h = new PriorityQueue<Long>(Collections.reverseOrder());
+     PriorityQueue<Long> min_h = new PriorityQueue<Long>();
+     for(int i=0; i<n; i++){
+         max_h.add(arr[i]) ;
+         min_h.add(arr[i]) ;
+         
+     }
+     long m1 = max_h.remove();
+     long m2 = max_h.remove();
+     long m3 = max_h.remove();
+     
+     long min1 = min_h.remove();
+     long min2 = min_h.remove();
+     
+     long ans  = Math.max(m1*m2*m3, min1*min2*m1) ;
+      return ans ;
+ 
+    }
+}
