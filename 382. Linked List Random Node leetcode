@@ -1,0 +1,24 @@
+class Solution {
+    ListNode head;
+    int size ;
+    public Solution(ListNode head) {
+      this.head = head ;
+      this.size = 0 ;
+
+      ListNode dummy = head ;
+      while(dummy != null){
+          dummy = dummy.next ;
+          this.size++;
+      }
+        
+    }
+    public int getRandom() {
+       int index =  (int) (Math.random() * this.size) ;
+       ListNode dummy = head ;
+       while(index > 0){
+           dummy = dummy.next;
+           index--;
+       } 
+        return dummy.val;
+    }
+}
