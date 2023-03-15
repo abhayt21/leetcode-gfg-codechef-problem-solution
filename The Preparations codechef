@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t , m , n , k ;
+	  cin>> t ;
+	while(t--!=0){
+	   cin>> m >> n >> k ;
+	    
+	   if( m <= (k*n) ) 
+	     cout<<"NO" <<endl;
+	     
+	     else 
+	     cout<<"YES"<<endl ;
+	    
+	}
+	return 0;
+}
