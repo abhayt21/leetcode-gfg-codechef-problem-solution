@@ -1,0 +1,19 @@
+class Solution {
+    private TreeNode  buildTree(int[] inorder , int iS , int iE, int [] postorder, int pS ,int pE){
+        if(pS > pE || iS > iE ){
+            return null ;
+        }
+        TreeNode root = new  TreeNode(postorder[pE]) ;
+        int rootI = 0 ;
+        while(root.val != inorder[rootI]){
+            rootI++ ;
+        }
+        root.left = buildTree(inorder , iS , rootI - 1 , postorder , pS , pS + rootI - iS - 1) ;
+        root.right = buildTree(inorder , rootI + 1 , iE , postorder ,pS+rootI - iS , pE - 1 ) ;
+        return root ;
+    }
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        
+        return buildTree(inorder , 0 , inorder.length - 1 , postorder , 0 , postorder.length - 1) ;
+    }
+}
