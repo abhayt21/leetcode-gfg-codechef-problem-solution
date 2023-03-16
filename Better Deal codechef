@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    
+	// your code goes here
+	int t , A , B ;
+	cin>>t ;
+	while(t--!=0){
+	    cin>> A >> B ;
+	    int calA = 100 - A ;
+	  int calB =  200 - (200 * B / 100)  ;
+	  
+	  if(calA < calB)
+	   cout<<"FIRST"<<endl ;
+	   else if(calA==calB)
+	   cout<<"BOTH" << endl ;
+	   else 
+	   cout<<"SECOND"<<endl ;
+	   
+	}
+	return 0;
+     
+	
+}
