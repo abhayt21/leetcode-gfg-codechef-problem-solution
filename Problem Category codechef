@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t , num ;
+    cin>> t ;
+    while(t--!=0){
+        cin>> num ;
+        
+        if(num >=1 && num < 100 )
+         cout<<"Easy"<<endl;
+         else if(num < 200 && num >= 100 )
+          cout<<"Medium"<<endl ;
+          else 
+          cout<<"Hard" << endl ;
+    }
+	return 0;
+}
