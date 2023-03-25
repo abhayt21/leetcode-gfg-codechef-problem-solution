@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int  t ;
+	 int  quan , price ;
+	cin>> t ;
+	while(t--!=0){
+	  
+	    cin>> quan >> price ;
+	    int total = quan * price ;
+	    if(quan > 1000)
+	     cout<<fixed<<setprecision(6)<<total*0.9 <<endl;
+         else 
+         cout<<fixed<<setprecision(6)<<total<<endl;
+
+	   
+	}
+	return 0;
+}
