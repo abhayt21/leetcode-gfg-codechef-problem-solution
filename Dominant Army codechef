@@ -1,0 +1,28 @@
+#include <iostream>
+#include<bits/stdc++.h>
+using namespace std;
+
+  int main() 
+  {
+      // your code goes here
+	 	int t;
+	cin>>t;
+	while(t--)
+	{
+	    multiset<int> s;
+	    int a,b,c;
+	    cin>>a>>b>>c;
+	    s.insert(a);
+	    s.insert(b);
+	    s.insert(c);
+	    auto it=s.begin();
+	    auto x=s.begin();
+	    auto y=s.begin();
+	    advance(x,1);
+	    advance(y,2);
+	    ((*it)+(*x))<(*y)?cout<<"YES\n":cout<<"NO\n";  
+	    
+	}	
+	return 0;  
+	
+}
