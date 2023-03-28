@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	// your code goes here
+	
+	int   t ;
+	cin>> t ;
+	while(t--!=0)
+	{
+	     double  x , y , a  ;
+	    cin>> x >> y ;
+	    a = (x*1.07) ;
+	    if(y<=a)
+	      cout<<"YES"<<endl ;
+	      else 
+	      cout<<"NO"<<endl ;
+	}
+	
+	
+	return 0;
+}
