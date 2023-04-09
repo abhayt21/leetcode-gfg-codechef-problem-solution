@@ -1,0 +1,26 @@
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin>>t;
+    while(t--){
+     int long long n,cnt=0;
+     cin>>n;
+     int long long a[n],b[n];
+     for(int i=0;i<n;i++){
+         cin>>a[i];
+     }
+     for(int i=0;i<n;i++){
+         cin>>b[i];
+         if((b[i]<=2*a[i]) and (a[i]<=(2*b[i]))){
+             cnt++;
+         }
+     }
+     cout<<cnt<<endl;
+     
+    }
+	// your code goes here
+	return 0;
+}
