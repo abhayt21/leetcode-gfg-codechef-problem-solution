@@ -1,0 +1,26 @@
+#include <bits/stdc++.h> 
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t ;
+	cin>> t;
+	while(t--!=0)
+	{
+	    float  num ;
+	    cin>> num;
+	    
+	    float hra , da ; 
+	    
+	    if(num <  1500) {
+	       hra = num *0.1 ;
+	       da = num * 0.9 ;
+	    }
+	    else { 
+	        hra = 500 ;
+	        da = num*0.98 ;
+	    }
+       cout<<fixed <<setprecision(2) <<hra + num + da <<endl;
+	}
+	return 0;
+}
