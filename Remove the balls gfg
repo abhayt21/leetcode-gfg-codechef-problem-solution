@@ -1,0 +1,39 @@
+class Solution
+ {
+    public static int finLength(int N, int[] color, int[] radius) {
+        // code here
+        int i=0;
+        int j=1;
+        int count=0;
+        while(j<N)
+        {
+            while(color[i]!=color[j] && radius[i]!=radius[j])
+            {
+                i++;
+                j++;
+                if(j==N) return N-count;;
+            }
+            while(i>=0  && color[i]==color[j] && radius[i]==radius[j] && j<N && radius[i]!=-1)
+            {
+                color[i]=-1;
+                color[j]=-1;
+                radius[i]=-1;
+                radius[j]=-1;
+                count+=2;
+                j++;
+                i--;
+                while(i>=0 && color[i]==-1)
+                {
+                    i--;
+                }
+                if(j==N) return N-count ; ;
+            }
+            
+            i=j;
+            j++;
+            
+        }
+        return N-count;
+    }
+}
+
