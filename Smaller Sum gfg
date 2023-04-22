@@ -1,0 +1,23 @@
+class Solution
+{
+    public long[] smallerSum(int n,int arr[])
+    {
+        long ans[] = new long[n];
+        long sum = 0;
+        int arrCpy[] = arr.clone();
+        HashMap<Integer,Long> map = new HashMap<>();
+        Arrays.sort(arrCpy);
+        for(int i=0;i<n;i++){
+            if(!map.containsKey(arrCpy[i])){
+                map.put(arrCpy[i], sum);
+            }
+            sum = sum + arrCpy[i];
+        }
+
+        for(int i=0;i<n;i++){
+            ans[i] = map.get(arr[i]);
+        }
+        return ans;
+	}
+}
+
