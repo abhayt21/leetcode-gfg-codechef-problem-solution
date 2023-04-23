@@ -1,0 +1,24 @@
+class Solution {
+    public static int minimumNumber(int n, int[] arr) {
+        // code here
+        
+       Arrays.sort(arr) ;
+       int odd = 0 , ans = arr[n-1] ;
+       for(int p : arr ){
+           if(p%2 !=0){
+               odd++ ;
+           }
+           if(p < ans ){
+               ans = p ;
+           }
+       }
+       if(odd > 0){
+           ans = 1;
+       }
+       return ans ;
+       
+    }
+    
+}
+        
+ 
