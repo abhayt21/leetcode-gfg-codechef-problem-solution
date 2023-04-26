@@ -1,0 +1,24 @@
+class Solution {
+    public static boolean is_possible_to_get_seats(int n, int m, int[] arr) {
+        // code here
+        int i = 0;
+        for(;i<m;i++){
+            if(arr[i] == 0){
+                if(i>0 && arr[i-1] == 1){
+                continue;
+                }
+                if(i<m-1 && arr[i+1] == 1){
+                continue;    
+                }
+                n--;
+                arr[i] = 1;
+            }
+            if(n == 0)
+            break;
+        }
+       
+        if(n == 0)
+        return true;
+        return false;
+    }
+} 
