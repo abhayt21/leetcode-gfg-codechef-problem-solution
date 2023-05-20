@@ -1,0 +1,45 @@
+
+
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+    private static int minSteps(int []arr,int n)
+    {
+        n--;
+        int maxF=0,currF;
+        Arrays.sort(arr);
+        for(int i=0;i<n;i++)
+        {
+            currF=0;
+            while(i<n && arr[i]==arr[i+1])
+            {
+                currF++;
+                i++;
+            }
+            if(currF>maxF)
+              maxF= currF;
+        }
+        return n-maxF;
+    }
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+		Scanner scan = new Scanner(System.in);
+		int T= scan.nextInt();
+		while(T-->0)
+		{
+		    int n= scan.nextInt();
+		    int []arr= new int[n];
+		    for(int i=0;i<n;i++)
+		      arr[i]= scan.nextInt();
+		    int ans= minSteps(arr,n);
+		    System.out.println(ans);
+		}
+	}
+}
