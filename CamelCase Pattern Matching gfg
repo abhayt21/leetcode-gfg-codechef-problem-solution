@@ -1,0 +1,32 @@
+class Solution{
+    ArrayList<String> CamelCase(int N,String[] d,String p)
+    {
+        //code here
+        ArrayList<String> list = new ArrayList<>();
+        String value;
+        String regex = "^" + p + ".*";
+        int patternLength = p.length();
+        for(String i : d)
+        {
+            if(i.length() >= patternLength)
+            {
+                value = i.replaceAll("[a-z]", "");
+                if(value.length() >= patternLength)
+                {
+                    if(value.matches(regex))
+                    {
+                        list.add(i);
+                    }
+                }
+            }
+        }
+        if(list.size() == 0)
+        {
+            list.add("-1");
+        } else 
+        {
+            Collections.sort(list);
+        }
+        return list;
+    }
+}
