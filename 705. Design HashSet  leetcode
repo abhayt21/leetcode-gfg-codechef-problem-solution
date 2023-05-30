@@ -1,0 +1,28 @@
+class MyHashSet {
+           List<Integer> S;
+
+    public MyHashSet() {
+        S = new ArrayList<>();
+    }
+    
+    public void add(int key) {
+        if(S.contains(key) == false )
+        {
+            S.add(key) ;
+        }
+    }
+    
+    public void remove(int key) 
+    {
+        if(S.contains(key) == true )  {
+            S.remove(S.indexOf(key)) ;
+
+        } 
+    }
+    
+    public boolean contains(int key) {
+        return S.contains(key)  ;
+
+    }  
+
+}
