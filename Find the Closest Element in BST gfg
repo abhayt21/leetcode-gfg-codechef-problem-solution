@@ -1,0 +1,22 @@
+class Solution  {
+    
+    static int mini;
+    static int minDiff(Node  root, int K){ 
+        mini=Integer.MAX_VALUE ;
+        
+        
+
+      inorder(root,K);
+     
+      return mini  ;
+      
+    } 
+    
+    private static void inorder(Node root,int K){
+        if(root==null) return ;
+        
+        mini=Math.min(mini,Math.abs(K-root.data));
+        inorder(root.left,K);
+        inorder(root.right,K);
+    }
+}
