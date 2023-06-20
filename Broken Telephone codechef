@@ -1,0 +1,33 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Codechef
+{   public static Scanner sc = new Scanner(System.in);
+    
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		for(int tests = sc.nextInt(); tests > 0; tests--) 
+		    solve(sc.nextInt());
+	}
+	
+	static void solve(int n) {
+	    int[] arr = new int[n];
+	    
+	    for(int i=0; i<n; i++)
+	        arr[i] = sc.nextInt();
+	        
+	    int idiots = 0;
+	    
+	    if(arr[0] != arr[1]) idiots++;
+	    if(arr[n-1] != arr[n-2]) idiots++;
+	    
+	    for(int i=1; i < n-1; i++) 
+	        if(arr[i] != arr[i-1] || arr[i] != arr[i+1])
+	            idiots++;
+	    
+	    System.out.println(idiots);
+	}
+}
