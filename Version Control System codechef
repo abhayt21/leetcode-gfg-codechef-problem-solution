@@ -1,0 +1,39 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+/* Name of the class has to be "Main" only if the class is public. */
+class Codechef
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		int t,n,m,k;
+		Scanner sc=new Scanner(System.in);
+		t=sc.nextInt();
+		while(t-->0){
+		    n=sc.nextInt();
+		    m=sc.nextInt();
+		    k=sc.nextInt();
+		    ArrayList<Integer> ignore=new ArrayList<>();
+		    for(int i=0;i<m;i++){
+		        ignore.add(sc.nextInt());
+		    }
+		    ArrayList<Integer> tracked=new ArrayList<>();
+		    for(int i=0;i<k;i++){
+		        tracked.add(sc.nextInt());
+		    }
+		    int count_both=0;
+		    int count_none=0;
+		    for(int i=1;i<=n;i++){
+		        if(ignore.contains(i) && tracked.contains(i)){
+		            count_both++;
+		        }else if(!ignore.contains(i) && !tracked.contains(i)){
+		            count_none++;
+		        }
+		    }
+		    System.out.println(count_both+" "+count_none);
+		}
+	}
+}
